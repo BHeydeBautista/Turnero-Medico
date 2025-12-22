@@ -1,13 +1,10 @@
-import { HeroSection } from "@/components/home/HeroSection";
-import { MainFeatures } from "@/components/home/MainFeatures";
-import { CTASection } from "@/components/home/CTASection";
+import { Hero, Features } from "@/components/home";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <MainFeatures />
-      <CTASection />
+      <Hero />
+      <Features />
     </>
   );
 }
