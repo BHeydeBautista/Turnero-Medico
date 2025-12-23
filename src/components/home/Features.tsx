@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CalendarDays, FilePlus, MessageCircle } from "lucide-react";
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const features = [
   {
@@ -30,18 +31,16 @@ export function Features() {
         </h2>
 
         <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ staggerChildren: 0.2 }}
           className="mt-12 grid md:grid-cols-3 gap-10"
         >
           {features.map((feature) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              variants={fadeUp}
               className="flex flex-col items-center"
             >
               <div className="p-4 rounded-full bg-blue-100 text-blue-600">

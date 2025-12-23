@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CalendarCheck, Clock, FileText } from "lucide-react";
 import { colorVariants } from "@/lib/colorVariants";
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const stats = [
   {
@@ -36,10 +37,10 @@ export function StatsCards() {
     <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ staggerChildren: 0.15 }}
           className="grid md:grid-cols-3 gap-6"
         >
           {stats.map((stat) => {
@@ -48,9 +49,7 @@ export function StatsCards() {
             return (
               <motion.div
                 key={stat.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                variants={fadeUp}
                 className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition"
               >
                 <div className="flex items-center gap-4">
