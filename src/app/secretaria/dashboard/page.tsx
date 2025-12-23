@@ -9,9 +9,9 @@ import TramitesOS from "@/components/secretary/TramitesOS";
 
 export default function SecretariaPage() {
   return (
-    <div className="bg-slate-100">
-      <div className="max-w-[1200px] mx-auto px-6 py-8">
-        <div className="grid grid-cols-[240px_1fr] gap-6">
+    <div className="bg-slate-100 min-h-screen">
+      <div className="max-w-[1280px] mx-auto px-4 py-6">
+        <div className="grid grid-cols-[240px_1fr] gap-4">
           <Sidebar />
 
           <main className="space-y-6">
@@ -19,7 +19,7 @@ export default function SecretariaPage() {
 
             <StatsCards />
 
-            <div className="grid grid-cols-12 gap-6">
+            <div className="grid grid-cols-12 gap-4">
               <div className="col-span-8 space-y-6">
                 <AppointmentsTable />
                 <TramitesOS />
